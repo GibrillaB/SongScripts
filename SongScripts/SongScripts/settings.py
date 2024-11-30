@@ -122,3 +122,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SPOTIFY_CLIENT_ID = '4aa43628aaa64e9490b892e7d10c8daa'
+SPOTIFY_CLIENT_SECRET = 'cca8cf6181b24bc188774580710e32cf'
+SPOTIFY_REDIRECT_URI = 'http://localhost:8000/SongScripts/callback'
+
+GENIUS_ACCESS_TOKEN = '5SFy0FKEpzqNmE1ybGvC2nJUlCl--MLGdpHtBBRpGxToMbH7hbuGb_zGD_ui1vZ7'
+

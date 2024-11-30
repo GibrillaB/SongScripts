@@ -5,15 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}SongScripts{% endblock %}</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #121212; color: #fff; }
-        header { background-color: #1DB954; padding: 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f2f2ff; color: #333; }
+        header { background-color: #a3a0ff; padding: 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5em; color: #000000; }
+        header p { font-size: 1.2em; color: #fff; }
         nav { text-align: center; margin: 20px 0; }
-        nav a { text-decoration: none; color: #fff; margin: 0 15px; font-size: 1.2em; }
-        nav a:hover { color: #1DB954; }
+        nav a { text-decoration: none; color: #000000; margin: 0 15px; font-size: 1.2em; }
+        nav a:hover { color: #a3a0ff; }
         .container { padding: 20px; max-width: 1200px; margin: auto; }
-        footer { background-color: #1DB954; text-align: center; padding: 10px; margin-top: 500px; }
-        footer p { margin: 0; }
+        footer { background-color: #a3a0ff; text-align: center; padding: 10px; margin-top: 50px; }
+        footer p { margin: 0; color: #fff; }
+
+        /* Enhanced styling for the search bar */
+        .search-bar {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-bar input {
+            padding: 12px 20px;
+            width: 100%;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .search-bar input:focus {
+            border-color: #a3a0ff;
+            box-shadow: 0 0 8px rgba(163, 160, 255, 0.5);
+        }
+
+        .search-bar button {
+            padding: 12px 20px;
+            background-color: #a3a0ff;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-left: 2px solid #fff;
+        }
+
+        .search-bar button:hover {
+            background-color: #7f7fff;
+        }
+
+        .search-bar button:focus {
+            outline: none;
+        }
+
+        /* Adjust the button size for smaller screens */
+        @media (max-width: 600px) {
+            .search-bar input {
+                font-size: 14px;
+                padding: 10px 15px;
+            }
+
+            .search-bar button {
+                padding: 10px 15px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -26,14 +89,22 @@
         <a href="#albums">Albums</a>
         <a href="#artists">Artists</a>
     </nav>
+
+
+    <!-- Main Content -->
     <div class="container">
         {% block content %}{% endblock %}
     </div>
-
 
 </body>
 
 <footer>
     <p>&copy; 2024 SongScripts. All rights reserved.</p>
 </footer>
+
+{% block scripts %}
+<script>
+// You can add Spotify Web Playback SDK initialization here in the future
+</script>
+{% endblock %}
 </html>

@@ -1,38 +1,12 @@
 {% extends "base.html" %}
 
-{% block title %}
-Welcome
-{% endblock %}
+{% block title %}Home{% endblock %}
 
 {% block content %}
-<div class="topnav">
-    <input type="text" placeholder="Type the lyric you remember">
-</div>
-
-<style>
-    .topnav {
-        overflow: hidden;
-        background-color: #e9e9e9;
-        padding: 10px;
-    }
-
-    /* Style the search box inside the navigation bar */
-    .topnav input[type="text"] {
-        width: 100%;
-        max-width: 600px;
-        margin: auto;
-        display: block;
-        padding: 10px;
-        font-size: 17px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-    }
-
-    /* Responsive adjustments */
-    @media screen and (max-width: 600px) {
-        .topnav input[type="text"] {
-            width: 90%;
-        }
-    }
-</style>
+    <div class="search-bar">
+        <form method="get" action="{% url 'search_lyrics' %}">
+            <input type="text" name="query" placeholder="Search for lyrics or songs..." value="{{ query|default:'' }}">
+            <button type="submit">Search</button>
+        </form>
+    </div>
 {% endblock %}
