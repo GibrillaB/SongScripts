@@ -13,6 +13,14 @@
                 </li>
             {% endfor %}
         </ul>
+
+        <h2>Recent Searches:</h2>
+<ul>
+    {% for recent_query in recent_queries %}
+        <li>
+            <a href="?query={{ recent_query.query_text }}">{{ recent_query.query_text }} ({{ recent_query.timestamp }})</li>
+    {% endfor %}
+</ul>
     {% else %}
         <p>No results found for "{{ query }}"</p>
     {% endif %}
