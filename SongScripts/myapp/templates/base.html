@@ -81,7 +81,10 @@
 </head>
 <body>
     <header>
-        <h1>SongScripts</h1>
+        <!-- Make the title a link to the home page -->
+        <a href="{% url 'home' %}" style="text-decoration: none; color: inherit;">
+            <h1>SongScripts</h1>
+        </a>
         <p>Discover Your Favorite Tracks Through Lyrics!</p>
     </header>
     <nav>
@@ -89,7 +92,6 @@
         <a href="#albums">Albums</a>
         <a href="#artists">Artists</a>
     </nav>
-
 
     <!-- Main Content -->
     <div class="container">

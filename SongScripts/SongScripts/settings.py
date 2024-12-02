@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "myapp"
+
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,7 @@ SPOTIFY_CLIENT_SECRET = 'cca8cf6181b24bc188774580710e32cf'
 SPOTIFY_REDIRECT_URI = 'http://localhost:8000/SongScripts/callback'
 
 GENIUS_ACCESS_TOKEN = '5SFy0FKEpzqNmE1ybGvC2nJUlCl--MLGdpHtBBRpGxToMbH7hbuGb_zGD_ui1vZ7'
+
+LOGIN_REDIRECT_URL = '/dashboard/'
+LOGOUT_REDIRECT_URL = '/'
 

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div style="text-align: center; margin: 50px auto;">
+    <h2>Welcome, {{ user.username }}</h2>
+    <p>Here you can personalize your dashboard.</p>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="user_preferences" rows="5" style="width: 80%;"></textarea><br><br>
+        <button type="submit" style="padding: 10px 20px; background-color: #a3a0ff; color: white; border: none; border-radius: 5px;">
+            Save Preferences
+        </button>
+    </form>
+    <!-- Logout Button -->
+    <form method="POST" action="{% url 'logout' %}" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" 
+                style="padding: 10px 20px; background-color: #ff5c5c; color: white; border: none; border-radius: 5px;">
+            Log Out
+        </button>
+    </form>
+</div>
+{% endblock %}
